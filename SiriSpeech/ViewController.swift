@@ -23,6 +23,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         microphoneButton.isEnabled = false
         speechRecognizer?.delegate = self
         
@@ -58,6 +59,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             microphoneButton.isEnabled = false
             microphoneButton.setTitle("Start Recording", for: .normal)
         } else {
+            print("start")
             startRecording()
             microphoneButton.setTitle("Stop Recording", for: .normal)
         }

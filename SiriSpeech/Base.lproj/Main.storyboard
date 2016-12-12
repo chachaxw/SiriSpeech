@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is the UITextView" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-2s-ZLM">
-                                <rect key="frame" x="16" y="160" width="240" height="40"/>
+                                <rect key="frame" x="20" y="160" width="240" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7V8-WD-f5O"/>
                                     <constraint firstAttribute="width" constant="240" id="t0Z-bx-8di"/>
@@ -32,11 +32,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6T-Gn-B5z">
-                                <rect key="frame" x="133.5" y="518.5" width="108" height="30"/>
+                                <rect key="frame" x="153" y="553" width="108" height="30"/>
                                 <state key="normal" title="Start Recording"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What can I help you With?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PQ-q3-nEd">
-                                <rect key="frame" x="25.5" y="68" width="324" height="50"/>
+                                <rect key="frame" x="45" y="68" width="324" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="70z-Ac-Xcx"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="324" id="9jA-Rr-IeN"/>
@@ -59,7 +59,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="recordButton" destination="z6T-Gn-B5z" id="7d1-nE-rEk"/>
+                        <outlet property="microphoneButton" destination="z6T-Gn-B5z" id="PHX-vG-ubu"/>
                         <outlet property="textView" destination="UUx-2s-ZLM" id="N4M-Xb-1PH"/>
                     </connections>
                 </viewController>
