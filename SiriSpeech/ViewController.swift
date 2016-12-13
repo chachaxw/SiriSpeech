@@ -57,10 +57,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
-            microphoneButton.setTitle("Start Recording", for: .normal)
+            microphoneButton.setTitle("Start", for: .normal)
         } else {
             startRecording()
-            microphoneButton.setTitle("Stop Recording", for: .normal)
+            microphoneButton.setTitle("Stop", for: .normal)
         }
     }
 

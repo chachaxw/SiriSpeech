@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,18 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6T-Gn-B5z">
-                                <rect key="frame" x="133.5" y="518.5" width="108" height="30"/>
-                                <state key="normal" title="Start Recording"/>
-                                <connections>
-                                    <action selector="microphoneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9O5-lF-yVk"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What can I help you With?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PQ-q3-nEd">
-                                <rect key="frame" x="25.5" y="68" width="324" height="50"/>
+                                <rect key="frame" x="-2" y="68" width="324" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="70z-Ac-Xcx"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="324" id="9jA-Rr-IeN"/>
@@ -41,18 +34,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="This is the UITextView" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-2s-ZLM">
-                                <rect key="frame" x="16" y="139" width="343" height="100"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is the UITextView" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-2s-ZLM">
+                                <rect key="frame" x="16" y="160" width="288" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="xE9-nO-TYe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6T-Gn-B5z">
+                                <rect key="frame" x="122.5" y="438" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.27721933136385823" green="0.79727639459321176" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="7lS-EJ-Dbe"/>
+                                    <constraint firstAttribute="height" constant="75" id="Fxv-78-Jyq"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="37.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="microphoneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9O5-lF-yVk"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.9895667020907315" blue="0.97660001310038891" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="z6T-Gn-B5z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="5Lf-UD-S8Y"/>
+                            <constraint firstItem="z6T-Gn-B5z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="191.5" id="5Lf-UD-S8Y" userLabel="Microphone Button.centerY = centerY + 65"/>
                             <constraint firstItem="1PQ-q3-nEd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="5ZR-oX-B1j"/>
                             <constraint firstItem="UUx-2s-ZLM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NVX-Xl-Quy"/>
                             <constraint firstItem="1PQ-q3-nEd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZJw-MS-nY5"/>
@@ -68,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="137.77173913043478"/>
+            <point key="canvasLocation" x="133.59999999999999" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
