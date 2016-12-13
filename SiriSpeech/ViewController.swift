@@ -14,8 +14,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var textView: UITextView!
     
     @IBOutlet weak var microphoneButton: UIButton!
+
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))!
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest? // 用于处理语音识别请求，为语音识别提供音频输入
     private var recognitionTask: SFSpeechRecognitionTask? // 返回识别请求的结果
     private let audioEngine = AVAudioEngine() // 音频引擎
@@ -25,7 +26,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         microphoneButton.isEnabled = false
-        speechRecognizer?.delegate = self
+        speechRecognizer.delegate = self
         
         SFSpeechRecognizer.requestAuthorization {(authStatus) in
             var isButtonEnabled = false
@@ -55,6 +56,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         if audioEngine.isRunning {
             audioEngine.stop()
+            textView.text = "Say something"
             recognitionRequest?.endAudio()
             microphoneButton.isEnabled = false
             microphoneButton.setTitle("Start", for: .normal)
@@ -91,10 +93,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
         
         recognitionRequest.shouldReportPartialResults = true
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
             var isFinal = false
             
             if result != nil {
+                print("录音结果 \(result)")
                 self.textView.text = result?.bestTranscription.formattedString
                 isFinal = (result?.isFinal)!
             }
@@ -108,22 +111,23 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 
                 self.microphoneButton.isEnabled = true
             }
-            
-            let recordingFormat = inputNode.outputFormat(forBus: 0)
-            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
-                self.recognitionRequest?.append(buffer)
-            }
-            
-            self.audioEngine.prepare()
-            
-            do {
-                try self.audioEngine.start()
-            } catch {
-                print("audioEngine couldn't start because of an error.")
-            }
-            
-            self.textView.text = "Say something, I'm listening!"
         })
+            
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+            self.recognitionRequest?.append(buffer)
+        }
+            
+        audioEngine.prepare()
+            
+        do {
+            print("audioEngine start")
+            try audioEngine.start()
+        } catch {
+            print("audioEngine couldn't start because of an error.")
+        }
+            
+        self.textView.text = "Say something, I'm listening!"
     }
     
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {

@@ -34,23 +34,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is the UITextView" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-2s-ZLM">
-                                <rect key="frame" x="16" y="160" width="288" height="100"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Say somthing" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-2s-ZLM">
+                                <rect key="frame" x="16" y="160" width="288" height="150"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="xE9-nO-TYe"/>
+                                    <constraint firstAttribute="height" constant="150" id="xE9-nO-TYe" userLabel="height = 150"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap for recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeW-k1-0iS">
+                                <rect key="frame" x="93.5" y="394" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6T-Gn-B5z">
                                 <rect key="frame" x="122.5" y="438" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.27721933136385823" green="0.79727639459321176" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="7lS-EJ-Dbe"/>
                                     <constraint firstAttribute="height" constant="75" id="Fxv-78-Jyq"/>
                                 </constraints>
                                 <state key="normal" title="Start">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.720703125" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -62,14 +74,17 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="z6T-Gn-B5z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="191.5" id="5Lf-UD-S8Y" userLabel="Microphone Button.centerY = centerY + 65"/>
                             <constraint firstItem="1PQ-q3-nEd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="5ZR-oX-B1j"/>
+                            <constraint firstItem="XeW-k1-0iS" firstAttribute="centerX" secondItem="z6T-Gn-B5z" secondAttribute="centerX" id="EAv-jE-Psl"/>
+                            <constraint firstItem="XeW-k1-0iS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="120.5" id="MS7-fm-Ivp" userLabel="Tap for recording.centerY = centerY + 120"/>
                             <constraint firstItem="UUx-2s-ZLM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NVX-Xl-Quy"/>
                             <constraint firstItem="1PQ-q3-nEd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZJw-MS-nY5"/>
                             <constraint firstItem="z6T-Gn-B5z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cqI-Gi-RiF"/>
                             <constraint firstItem="UUx-2s-ZLM" firstAttribute="top" secondItem="1PQ-q3-nEd" secondAttribute="bottom" constant="42" id="dWu-sz-xKo" userLabel="Text View.top = What can I help you With?.bottom + 36"/>
+                            <constraint firstItem="z6T-Gn-B5z" firstAttribute="top" secondItem="XeW-k1-0iS" secondAttribute="bottom" constant="23" id="gk6-WJ-DgS" userLabel="Microphone Button.top = Tap for recording.bottom + 20"/>
                             <constraint firstItem="UUx-2s-ZLM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="t93-bX-WfK"/>
                         </constraints>
                     </view>
