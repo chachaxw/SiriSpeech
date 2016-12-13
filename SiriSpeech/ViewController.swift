@@ -53,16 +53,19 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
     }
     
+    
     @IBAction func microphoneTapped(_ sender: AnyObject) {
         if audioEngine.isRunning {
             audioEngine.stop()
-            textView.text = "Say something"
             recognitionRequest?.endAudio()
+            textView.text = "You can tap button for saying something"
             microphoneButton.isEnabled = false
-            microphoneButton.setTitle("Start", for: .normal)
+            microphoneButton.layer.borderWidth = CGFloat(0)
         } else {
             startRecording()
-            microphoneButton.setTitle("Stop", for: .normal)
+            microphoneButton.layer.borderWidth = CGFloat(5)
+            microphoneButton.layer.backgroundColor = UIColor.init(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.00).cgColor
+            microphoneButton.layer.borderColor = UIColor.init(red: 0.94, green: 0.35, blue: 0.93, alpha: 1.00).cgColor
         }
     }
 
@@ -121,7 +124,6 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         audioEngine.prepare()
             
         do {
-            print("audioEngine start")
             try audioEngine.start()
         } catch {
             print("audioEngine couldn't start because of an error.")

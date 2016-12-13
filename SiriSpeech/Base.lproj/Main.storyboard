@@ -34,7 +34,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Say somthing" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-2s-ZLM">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="You can tap button for saying something" translatesAutoresizingMaskIntoConstraints="NO" id="UUx-2s-ZLM">
                                 <rect key="frame" x="16" y="160" width="288" height="150"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -49,19 +49,20 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap for recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeW-k1-0iS">
-                                <rect key="frame" x="93.5" y="394" width="132" height="21"/>
+                                <rect key="frame" x="94.5" y="394" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6T-Gn-B5z">
-                                <rect key="frame" x="122.5" y="438" width="75" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6T-Gn-B5z">
+                                <rect key="frame" x="123" y="438" width="75" height="75"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="7lS-EJ-Dbe"/>
                                     <constraint firstAttribute="height" constant="75" id="Fxv-78-Jyq"/>
                                 </constraints>
-                                <state key="normal" title="Start">
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" image="AudioIcon">
                                     <color key="titleColor" red="1" green="0.720703125" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -95,7 +96,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="137.18140929535232"/>
+            <point key="canvasLocation" x="133.125" y="136.26760563380282"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AudioIcon" width="30" height="43"/>
+    </resources>
 </document>
