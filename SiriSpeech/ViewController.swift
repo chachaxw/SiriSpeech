@@ -25,6 +25,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //设置其frame以及插入view的layer
+        let gradientLayer = CAGradientLayer().GradientLayer()
+        gradientLayer.frame = self.view.frame
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
         microphoneButton.isEnabled = false
         speechRecognizer.delegate = self
         
@@ -61,15 +66,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             textView.text = "You can tap button for saying something"
             microphoneButton.isEnabled = false
             microphoneButton.layer.removeAllAnimations()
-            microphoneButton.layer.borderWidth = CGFloat(0)
             microphoneButton.setImage(#imageLiteral(resourceName: "AudioIcon"), for: .normal)
-            microphoneButton.layer.backgroundColor = UIColor.init(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
         } else {
-            startRecording()
             animateButton()
             microphoneButton.setImage(#imageLiteral(resourceName: "Loading"), for: .normal)
-            microphoneButton.layer.backgroundColor = UIColor.init(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.00).cgColor
-            microphoneButton.layer.borderColor = UIColor.init(red: 0.94, green: 0.35, blue: 0.93, alpha: 1.00).cgColor
+            startRecording()
         }
     }
 

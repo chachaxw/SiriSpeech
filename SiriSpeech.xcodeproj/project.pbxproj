@@ -11,6 +11,7 @@
 		B6C1C1811DFE67AF00DD8534 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C1801DFE67AF00DD8534 /* ViewController.swift */; };
 		B6C1C1841DFE67AF00DD8534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C1C1821DFE67AF00DD8534 /* Main.storyboard */; };
 		B6C1C1911DFFB84600DD8534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6C1C1901DFFB84600DD8534 /* Assets.xcassets */; };
+		B6C1C1931E01501C00DD8534 /* CAGradientLayer+GradientBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C1C1921E01501C00DD8534 /* CAGradientLayer+GradientBG.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B6C1C1831DFE67AF00DD8534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6C1C18A1DFE67AF00DD8534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6C1C1901DFFB84600DD8534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6C1C1921E01501C00DD8534 /* CAGradientLayer+GradientBG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+GradientBG.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				B6C1C1821DFE67AF00DD8534 /* Main.storyboard */,
 				B6C1C1901DFFB84600DD8534 /* Assets.xcassets */,
 				B6C1C18A1DFE67AF00DD8534 /* Info.plist */,
+				B6C1C1921E01501C00DD8534 /* CAGradientLayer+GradientBG.swift */,
 			);
 			path = SiriSpeech;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			files = (
 				B6C1C1811DFE67AF00DD8534 /* ViewController.swift in Sources */,
 				B6C1C17F1DFE67AF00DD8534 /* AppDelegate.swift in Sources */,
+				B6C1C1931E01501C00DD8534 /* CAGradientLayer+GradientBG.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
