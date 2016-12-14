@@ -60,10 +60,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             recognitionRequest?.endAudio()
             textView.text = "You can tap button for saying something"
             microphoneButton.isEnabled = false
+            microphoneButton.layer.removeAllAnimations()
             microphoneButton.layer.borderWidth = CGFloat(0)
+            microphoneButton.setImage(#imageLiteral(resourceName: "AudioIcon"), for: .normal)
+            microphoneButton.layer.backgroundColor = UIColor.init(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00).cgColor
         } else {
             startRecording()
-            microphoneButton.layer.borderWidth = CGFloat(5)
+            animateButton()
+            microphoneButton.setImage(#imageLiteral(resourceName: "Loading"), for: .normal)
             microphoneButton.layer.backgroundColor = UIColor.init(red: 1.00, green: 1.00, blue: 1.00, alpha: 0.00).cgColor
             microphoneButton.layer.borderColor = UIColor.init(red: 0.94, green: 0.35, blue: 0.93, alpha: 1.00).cgColor
         }
@@ -138,6 +142,19 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         } else {
             microphoneButton.isEnabled = false
         }
+    }
+    
+    func animateButton() {
+        let rotate = CABasicAnimation(keyPath: "transform.rotation")
+        rotate.toValue = 2 * M_PI
+        rotate.repeatCount = MAXFLOAT
+        rotate.duration = 1
+        rotate.isRemovedOnCompletion = false
+        microphoneButton.layer.add(rotate, forKey: nil)
+    }
+    
+    func showLoveAnimation() {
+        
     }
 
 }
