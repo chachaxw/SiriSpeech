@@ -31,6 +31,11 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         self.view.layer.insertSublayer(gradientLayer, at: 0)
         
         microphoneButton.isEnabled = false
+        microphoneButton.layer.shadowOffset = CGSize(width: 0, height: 0);
+        microphoneButton.layer.shadowRadius = 4
+        microphoneButton.layer.shadowOpacity = 0.3;
+        microphoneButton.layer.shadowColor = UIColor(red: (187/255), green: (31/255), blue: (15/255), alpha: 0.5).cgColor;
+        
         speechRecognizer.delegate = self
         
         SFSpeechRecognizer.requestAuthorization {(authStatus) in
