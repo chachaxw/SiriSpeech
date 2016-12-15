@@ -33,7 +33,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         microphoneButton.isEnabled = false
         microphoneButton.layer.shadowOffset = CGSize(width: 0, height: 0);
         microphoneButton.layer.shadowRadius = 20
-        microphoneButton.layer.shadowOpacity = 0.3;
+        microphoneButton.layer.shadowOpacity = 0.4;
+        microphoneButton.layer.shadowOffset = CGSize(width: 0, height: 10)
         microphoneButton.layer.shadowColor = UIColor(red: (187/255), green: (31/255), blue: (15/255), alpha: 1.00).cgColor;
         
         speechRecognizer.delegate = self
