@@ -254,6 +254,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = K9G8A2A8Q6;
 				INFOPLIST_FILE = SiriSpeech/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chacha.SiriSpeech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -268,6 +269,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = K9G8A2A8Q6;
 				INFOPLIST_FILE = SiriSpeech/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chacha.SiriSpeech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
