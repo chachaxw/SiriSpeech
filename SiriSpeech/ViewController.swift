@@ -35,7 +35,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         microphoneButton.layer.shadowOffset = CGSize(width: 0, height: 0);
         microphoneButton.layer.shadowRadius = 20
         microphoneButton.layer.shadowOpacity = 0.4;
-        microphoneButton.layer.shadowOffset = CGSize(width: 0, height: 10)
+        microphoneButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         microphoneButton.layer.shadowColor = UIColor(red: (187/255), green: (31/255), blue: (15/255), alpha: 1.00).cgColor;
         
         speechRecognizer.delegate = self
@@ -115,6 +115,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 print("录音结果 \(result)")
                 self.textView.text = result?.bestTranscription.formattedString
                 isFinal = (result?.isFinal)!
+                self.showLoveAnimation(text: self.textView.text)
             }
             
             if error != nil || isFinal {
@@ -161,8 +162,12 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         microphoneButton.layer.add(rotate, forKey: nil)
     }
     
-    func showLoveAnimation() {
+    func showLoveAnimation(text: String) {
+        let alert = UIAlertController(title: "Hello Chacha", message: text, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+        alert.addAction(okAction)
         
+        return alert
     }
 
 }
